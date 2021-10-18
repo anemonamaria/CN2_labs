@@ -1,0 +1,7 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/acs_cn2/lab1/banda-de-asamblare/banda-de-asamblare.srcs/sources_1/new/banda_de_asambl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module registru1
+INFO: [VRFC 10-311] analyzing module registru2
+INFO: [VRFC 10-311] analyzing module registru3
+INFO: [VRFC 10-311] analyzing module banda_de_asamblare
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/acs_cn2/lab1/banda-de-asamblare/banda-de-asamblare.srcs/sim_1/new/banda_de_asambl_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module banda_de_asambl_sim
