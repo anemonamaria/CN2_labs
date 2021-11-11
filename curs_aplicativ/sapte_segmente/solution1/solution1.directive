@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+  <sourceFile name="sapte_segmente/seven_segments.cpp">
+    <directive functionName="seven_segments" label=" " functionLabel=" ">
+      <pragma name="INTERFACE">
+        <option name="port" value="return" positionalBoolean="4"/>
+      </pragma>
+      <pragma name="INTERFACE">
+        <option name="ap_none" value=" " positionalBoolean="mode"/>
+        <option name="port" value="anodes" positionalBoolean="4"/>
+      </pragma>
+    </directive>
+  </sourceFile>
+</AutoPilot:ProjectResources>
