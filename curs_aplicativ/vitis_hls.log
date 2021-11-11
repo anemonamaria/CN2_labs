@@ -1,0 +1,44 @@
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'ane' on host 'desktop-c37s5ea' (Windows NT_amd64 version 6.2) on Thu Nov 11 16:42:37 +0200 2021
+INFO: [HLS 200-10] In directory 'E:/acs_cn2/curs_aplicativ'
+Sourcing Tcl script 'E:/acs_cn2/curs_aplicativ/curs_aplicativ_1/solution1/csynth.tcl'
+INFO: [HLS 200-1510] Running: open_project curs_aplicativ_1 
+INFO: [HLS 200-10] Opening project 'E:/acs_cn2/curs_aplicativ/curs_aplicativ_1'.
+INFO: [HLS 200-1510] Running: set_top fi 
+INFO: [HLS 200-1510] Running: add_files curs_aplicativ_1/functii_inline.cpp 
+INFO: [HLS 200-10] Adding design file 'curs_aplicativ_1/functii_inline.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb curs_aplicativ_1/functii_inline_tb.cpp 
+INFO: [HLS 200-10] Adding test bench file 'curs_aplicativ_1/functii_inline_tb.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb curs_aplicativ_1/functii_inline_tb.h 
+INFO: [HLS 200-10] Adding test bench file 'curs_aplicativ_1/functii_inline_tb.h' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution 'E:/acs_cn2/curs_aplicativ/curs_aplicativ_1/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7a100t-csg324-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xc7a100tcsg324-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.075 seconds; current allocated memory: 865.374 MB.
+INFO: [HLS 200-10] Analyzing design file 'curs_aplicativ_1/functii_inline.cpp' ... 
+WARNING: [HLS 207-5527] unexpected pragma parameter 'mode': curs_aplicativ_1/functii_inline.cpp:13:23
+WARNING: [HLS 207-5527] unexpected pragma parameter 'mode': curs_aplicativ_1/functii_inline.cpp:14:23
+WARNING: [HLS 207-5527] unexpected pragma parameter 'mode': curs_aplicativ_1/functii_inline.cpp:15:23
+WARNING: [HLS 207-5527] unexpected pragma parameter 'mode': curs_aplicativ_1/functii_inline.cpp:16:23
+ERROR: [HLS 207-3334] no matching function for call to 'INV1': curs_aplicativ_1/functii_inline.cpp:18:12
+INFO: [HLS 207-4369] candidate function not viable: requires single argument 'a', but 2 arguments were provided: curs_aplicativ_1/functii_inline.cpp:6:6
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 5.755 seconds; current allocated memory: 87.169 MB.
+Compilation of the preprocessed source 'functii_inline' failed
+    while executing
+"source E:/acs_cn2/curs_aplicativ/curs_aplicativ_1/solution1/csynth.tcl"
+    invoked from within
+"hls::main E:/acs_cn2/curs_aplicativ/curs_aplicativ_1/solution1/csynth.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$newargs"
+    (procedure "hls_proc" line 16)
+    invoked from within
+"hls_proc [info nameofexecutable] $argv"
+INFO: [HLS 200-112] Total CPU user time: 6 seconds. Total CPU system time: 2 seconds. Total elapsed time: 13.787 seconds; peak allocated memory: 865.374 MB.
