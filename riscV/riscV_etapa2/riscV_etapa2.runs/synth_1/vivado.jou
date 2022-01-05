@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Jan  5 14:34:23 2022
+# Process ID: 408
+# Current directory: E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.runs/synth_1
+# Command line: vivado.exe -log RISC_V_IF_ID.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RISC_V_IF_ID.tcl
+# Log file: E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.runs/synth_1/RISC_V_IF_ID.vds
+# Journal file: E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source RISC_V_IF_ID.tcl -notrace

@@ -1,0 +1,165 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Wed Dec 22 12:48:42 2021
+# Process ID: 16676
+# Current directory: E:/acs_cn2/riscV/riscV_etapa2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8048 E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.xpr
+# Log file: E:/acs_cn2/riscV/riscV_etapa2/vivado.log
+# Journal file: E:/acs_cn2/riscV/riscV_etapa2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+oopen_project E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.xprIINFO: [Project 1-313] Project file moved from 'E:/acs_cn2/riscV/riscV_etapa1' since last save.WWARNING: [filemgmt 56-2] Default IP Output Path : Could not find the directory 'E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.gen/sources_1', nor could it be found using path 'E:/acs_cn2/riscV/riscV_etapa1/riscV_etapa1.gen/sources_1'.Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
+oERROR: [Vivado 12-106] *** Exception: java.lang.NullPointerException (See E:/acs_cn2/riscV/riscV_etapa2/update_compile_order -fopen_project: Timlaunch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simuset_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sim_1/new/ALUcontrol.v w ]
+add_files -fileset sim_1 E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sim_1/new/ALUcontrol.v
+update_compile_order -fileset sim_1
+export_ip_user_files -of_objects  [get_files E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sim_1/new/ALUcontrol.v] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sim_1/new/ALUcontrol.v
+close [ open E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/ALUcontrol.v w ]
+add_files E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/ALUcontrol.v
+update_compile_order -fileset sources_1
+close [ open E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/ALU.v w ]
+add_files E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/ALU.v
+update_compile_order -fileset sources_1
+close [ open E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/EX.v w ]
+add_files E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/EX.v
+update_compile_order -fileset sources_1
+close [ open E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/mux4_1.v w ]
+add_files E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/mux4_1.v
+update_compile_order -fileset sources_1
+close [ open E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/data_memory.v w ]
+add_files E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/data_memory.v
+update_compile_order -fileset sources_1
+close [ open E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/hazard_detection.v w ]
+add_files E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/hazard_detection.v
+update_compile_order -fileset sources_1
+close [ open E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/forwarding.v w ]
+add_files E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/forwarding.v
+update_compile_order -fileset sources_1
+close [ open E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/pipeline_ex_mem.v w ]
+add_files E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/pipeline_ex_mem.v
+close [ open E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/pipeline_mem_wb.v w ]
+add_files E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/pipeline_mem_wb.v
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/pipeline_mem_wb.v] -no_script -reset -force -quiet
+remove_files  E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/pipeline_mem_wb.v
+close [ open E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/pipeline_MEM_WB.v w ]
+add_files E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/pipeline_MEM_WB.v
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\data_memory.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\pipeline_ex_mem.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\mux4_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\hazard_detection.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\pipeline_mem_wb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\ALUcontrol.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\ALU.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\forwarding.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\EX.v:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\data_memory.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\pipeline_ex_mem.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\mux4_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\hazard_detection.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\pipeline_mem_wb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\ALUcontrol.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\ALU.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\forwarding.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\EX.v:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\data_memory.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\pipeline_ex_mem.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\mux4_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\hazard_detection.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\pipeline_mem_wb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\ALUcontrol.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\ALU.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\forwarding.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\EX.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\data_memory.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\pipeline_ex_mem.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\mux4_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\hazard_detection.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\pipeline_mem_wb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\ALUcontrol.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\ALU.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\forwarding.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\EX.v:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\data_memory.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\pipeline_ex_mem.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\mux4_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\hazard_detection.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\pipeline_mem_wb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\ALUcontrol.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\ALU.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\forwarding.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\EX.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\data_memory.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\pipeline_ex_mem.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\mux4_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\hazard_detection.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\pipeline_mem_wb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\ALUcontrol.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\ALU.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\forwarding.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\EX.v:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\data_memory.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\pipeline_ex_mem.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\mux4_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\hazard_detection.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\pipeline_mem_wb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\ALUcontrol.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\ALU.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\forwarding.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\EX.v:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\data_memory.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\pipeline_ex_mem.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\mux4_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\hazard_detection.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\pipeline_mem_wb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\ALUcontrol.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\ALU.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\forwarding.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\EX.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\data_memory.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\pipeline_ex_mem.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\mux4_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\hazard_detection.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\pipeline_mem_wb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\ALUcontrol.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\ALU.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\forwarding.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\EX.v:]
+ERROR: [Common 17-180] Spawn failed: No error
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\data_memory.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\pipeline_ex_mem.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\mux4_1.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\hazard_detection.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\pipeline_mem_wb.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\ALUcontrol.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\ALU.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\forwarding.v:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [E:\acs_cn2\riscV\riscV_etapa2\riscV_etapa2.srcs\sources_1\new\EX.v:]
+ERROR: [Common 17-180] Spawn failed: No error
+close [ open E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/RISC_V.v w ]
+add_files E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/RISC_V.v
+update_compile_order -fileset sources_1
+close [ open E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/control_path.v w ]
+add_files E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/control_path.v
+update_compile_order -fileset sources_1
+close [ open E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/pipeline_ID_EX.v w ]
+add_files E:/acs_cn2/riscV/riscV_etapa2/riscV_etapa2.srcs/sources_1/new/pipeline_ID_EX.v
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 22 14:02:09 2021...
