@@ -48,20 +48,18 @@ module EX(input [31:0] IMM_EX,          // valoarea imediate in EX
                                             // valorile prezente in etapele EX, MEM si WB
           );
           
-    wire[3:0] ALUinput;
-    wire[31:0] mux1_out;
-    wire[31:0] mux3_out;
+    wire[3:0] ALU_control_input;
+    wire[31:0] rs1, rs2;
     
-    mux4_1 mux1(REG_DATA1_EX, ALU_DATA_WB, ALU_OUT_MEM, forwardA, mux1_out);
+    ALUcontrol alu_control(ALUop_EX, FUNCT7_EX, FUNCT3_EX, ALU_control_input);
+    ALU alu(ALU_control_input, rs1, rs2, ZERO_EX, ALU_OUT_EX);
+    
+    mux4_1 mux1(REG_DATA1_EX, ALU_DATA_WB, ALU_OUT_MEM, forwardA, rs1);
  
     mux4_1 mux2(REG_DATA2_EX, ALU_DATA_WB, ALU_OUT_MEM, forwardB, REG_DATA2_EX_FINAL);   
     
-    mux2_1 mux3_EX(REG_DATA2_EX_FINAL, IMM_EX, ALUSrc_EX, mux3_out);
+    mux2_1 mux3_EX(REG_DATA2_EX_FINAL, IMM_EX, ALUSrc_EX, rs2);
     
-    ALUcontrol alu_control(ALUop_EX, FUNCT7_EX, FUNCT3_EX, ALUinput);
-    ALU alu(ALUinput, mux1_out, mux3_out, ZERO_EX, ALU_OUT_EX);
-   
-    // AddSUM
     adder AddSum(PC_EX, IMM_EX, PC_Branch_EX); 
 
 endmodule

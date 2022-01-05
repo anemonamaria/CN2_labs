@@ -23,14 +23,14 @@ module pipeline_MEM_WB(input clk, reset,
                        input[31:0] Read_data,
                        input[31:0] Address, 
                        input[4:0] Rd,
-                       input MemRead_MEM, MemtoReg_MEM, MemWrite_MEM, RegWrite_MEM, Branch_MEM, ALUSrc_MEM,
-                       input [1:0] ALUop_MEM,
+                       input MemRead, MemtoReg, MemWrite, RegWrite, Branch, ALUSrc,
+                       input [1:0] ALUop,
                        
-                       output reg[31:0] Read_data_out,
+                       output reg[31:0] Readdata_out,
                        output reg[31:0] Address_out,
                        output reg[4:0] Rd_out,
-                       output reg MemRead_WB, MemtoReg_WB, MemWrite_WB, RegWrite_WB, Branch_WB, ALUSrc_WB,
-                       output reg [1:0] ALUop_WB
+                       output reg MemRead_out, MemtoReg_out, MemWrite_out, RegWrite_out, Branch_out, ALUSrc_out,
+                       output reg [1:0] ALUop_out
  
     );
     
@@ -38,29 +38,29 @@ module pipeline_MEM_WB(input clk, reset,
     begin
         if (reset)
             begin
-                Read_data_out <= 32'b0;
-                Address_out <= 32'b0;
-                Rd_out <= 5'b0;
-                MemRead_WB <= 1'b0;
-                MemtoReg_WB <= 1'b0;
-                MemWrite_WB <= 1'b0;
-                RegWrite_WB <= 1'b0;
-                Branch_WB <= 1'b0;
-                ALUSrc_WB <= 1'b0;
-                ALUop_WB <= 2'b0;
+                Readdata_out <= 0;
+                Address_out <= 0;
+                Rd_out <= 0;
+                MemRead_out <= 0;
+                MemtoReg_out <= 0;
+                MemWrite_out <= 0;
+                RegWrite_out <= 0;
+                Branch_out <= 0;
+                ALUSrc_out <= 0;
+                ALUop_out <= 0;
             end
         else
             begin
-                Read_data_out <= Read_data;
+                Readdata_out <= Read_data;
                 Address_out <= Address;
                 Rd_out <= Rd;
-                MemRead_WB <= MemRead_MEM;
-                MemtoReg_WB <= MemtoReg_MEM;
-                MemWrite_WB <= MemWrite_MEM;
-                RegWrite_WB <= RegWrite_MEM;
-                Branch_WB <= Branch_MEM;
-                ALUSrc_WB <= ALUSrc_MEM;
-                ALUop_WB <= ALUop_MEM;
+                MemRead_out <= MemRead;
+                MemtoReg_out <= MemtoReg;
+                MemWrite_out <= MemWrite;
+                RegWrite_out <= RegWrite;
+                Branch_out <= Branch;
+                ALUSrc_out <= ALUSrc;
+                ALUop_out <= ALUop;
             end
     end
 endmodule

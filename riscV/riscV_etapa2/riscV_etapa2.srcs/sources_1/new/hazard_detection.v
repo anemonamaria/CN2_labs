@@ -30,17 +30,16 @@ module hazard_detection(input [4:0] rd,         // adresa registrului destinatie
                         output reg control_sel);// semnal transmis spre unitatea de control
     always@(*)
     begin
-        if (MemRead && ((rd == rs1) || (rd == rs2)))   // hazard detectat
+        if (MemRead && ((rd == rs1) || (rd == rs2)))  
         begin
-            control_sel <= 1;
-            PCwrite <= 0;
-            IF_IDwrite <= 0;
-        end
-        else
-        begin
-            control_sel <= 0;
-            PCwrite <= 1;
-            IF_IDwrite <= 1;
+            PCwrite <= 1'b0;
+            IF_IDwrite <= 1'b0;
+            control_sel <= 1'b1;
+
+        end else begin
+            PCwrite <= 1'b1;
+            IF_IDwrite <= 1'b1;
+            control_sel <= 1'b0;
         end
     end
 endmodule

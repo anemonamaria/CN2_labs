@@ -33,32 +33,18 @@ module forwarding(input [4:0] rs1,          // adresa registrului sursa 1 in eta
 
     always@(*)
     begin
-        if (ex_mem_regwrite && (ex_mem_rd != 0) && (ex_mem_rd == rs1))  // hazard in stagiul EX
-        begin
-            forwardA <= 2'b10;
-        end
-        else if (mem_wb_regwrite && (mem_wb_rd != 0) &&                // hazard in stagiul MEM
-           ~(ex_mem_regwrite && (ex_mem_rd != 0) && (ex_mem_rd == rs1)) &&
-           (mem_wb_rd == rs1))
-            begin
-            forwardA <= 2'b01;    
-            end
-        else begin
-            forwardA <= 2'b00;
-        end
-        
-        if (ex_mem_regwrite && (ex_mem_rd != 0) && (ex_mem_rd == rs2))  // hazard in stagiul EX
-        begin
-            forwardB <= 2'b10;
-        end
-        else if (mem_wb_regwrite && (mem_wb_rd != 0) &&                 // hazard in stagiul MEM
-           ~(ex_mem_regwrite && (ex_mem_rd != 0) && (ex_mem_rd == rs2)) &&
-           (mem_wb_rd == rs2))
-        begin
-            forwardB <= 2'b01;    
-        end
-        else begin
-            forwardB <= 2'b00;
-        end
+    forwardA <= 2'b00;
+    forwardB <= 2'b00;
+
+    if (ex_mem_regwrite && (ex_mem_rd != 0) && (ex_mem_rd == rs1))  // etapa EX
+       forwardA <= 2'b10;
+    if (ex_mem_regwrite && (ex_mem_rd != 0) && (ex_mem_rd == rs2))  
+       forwardB <= 2'b10;
+    if (mem_wb_regwrite && (mem_wb_rd != 0) &&                // etapa MEM
+       !(ex_mem_regwrite && (ex_mem_rd != 0) && (ex_mem_rd == rs1)) && (mem_wb_rd == rs1))
+       forwardA <= 2'b01;    
+    if (mem_wb_regwrite && (mem_wb_rd != 0) &&                
+       !(ex_mem_regwrite && (ex_mem_rd != 0) && (ex_mem_rd == rs2)) && (mem_wb_rd == rs2))
+       forwardB <= 2'b01;    
     end
 endmodule

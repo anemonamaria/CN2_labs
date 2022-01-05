@@ -27,7 +27,7 @@ module data_memory(input clk,
                    input [31:0] write_data,
                    output reg [31:0] read_data
                    );
-    reg [31:0] memory [0:1023];    // memoria de date     
+    reg [31:0] memory [0:1023];
     integer i;
     
    initial begin
@@ -36,15 +36,17 @@ module data_memory(input clk,
     end
   end
     
-    always@(*)
+    always@(*)  // asincrona
     begin
-        if (mem_read == 1)
-            read_data = memory[address[11:2]];
+        if (mem_read)
+            read_data <= memory[address[11:2]];
+        else
+            read_data = read_data;
     end
     
-    always@(posedge clk)
+    always@(posedge clk)  // sincrona
     begin
-        if (mem_write == 1)
-            memory[address[11:2]] = write_data;
+        if (mem_write)
+            memory[address[11:2]] <= write_data;
     end
 endmodule

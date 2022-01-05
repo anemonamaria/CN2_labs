@@ -19,57 +19,54 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
-module pipeline_ex_mem(input clk, reset,
-                       input Zero,
-                       input[31:0] ALU_result,
-                       input[31:0] AddSum,
-                       input[31:0] mux22_out,
-                       input[4:0] RD_EX,
-                       input MemRead_EX, MemtoReg_EX, MemWrite_EX, RegWrite_EX, Branch_EX, ALUSrc_EX,
-                       input [1:0] ALUop_EX,
+module pipeline_ex_mem(input clk, reset, Zero,
+                       input[31:0] ALU,
+                       input[31:0] Adder,
+                       input[31:0] mux,
+                       input[4:0] RD,
+                       input MemRead, MemtoReg, MemWrite, RegWrite, Branch, ALUSrc,
+                       input [1:0] ALUop,
                        
                        output reg Zero_out,
-                       output reg[31:0] ALU_result_out,
-                       output reg[31:0] AddSum_out,
-                       output reg[31:0] mux22_out_out,
-                       output reg[4:0] RD_EX_out,
-                       output reg MemRead_MEM, MemtoReg_MEM, MemWrite_MEM, RegWrite_MEM, Branch_MEM, ALUSrc_MEM,
-                       output reg [1:0] ALUop_MEM
- 
+                       output reg[31:0] ALU_out,
+                       output reg[31:0] Adder_out,
+                       output reg[31:0] mux_out,
+                       output reg[4:0] RD_out,
+                       output reg MemRead_out, MemtoReg_out, MemWrite_out, RegWrite_out, Branch_out, ALUSrc_out,
+                       output reg [1:0] ALUop_out
     );
     
     always@(posedge clk)
     begin
         if (reset)
             begin
-                AddSum_out <= 32'b0;
+                Adder_out <= 0;
                 Zero_out <= 0;
-                ALU_result_out <= 32'b0;
-                mux22_out_out <= 32'b0;
-                RD_EX_out <= 5'b0;
-                MemRead_MEM <= 1'b0;
-                MemtoReg_MEM <= 1'b0;
-                MemWrite_MEM <= 1'b0;
-                RegWrite_MEM <= 1'b0;
-                Branch_MEM <= 1'b0;
-                ALUSrc_MEM <= 1'b0;
-                ALUop_MEM <= 2'b0;
+                ALU_out <= 0;
+                mux_out <= 0;
+                RD_out <= 0;
+                MemRead_out <= 0;
+                MemtoReg_out <= 0;
+                MemWrite_out <= 0;
+                RegWrite_out <= 0;
+                Branch_out <= 0;
+                ALUSrc_out <= 0;
+                ALUop_out <= 0;
             end
         else
             begin
-                AddSum_out <= AddSum;
+                Adder_out <= Adder;
                 Zero_out <= Zero;
-                ALU_result_out <= ALU_result;
-                mux22_out_out <= mux22_out;
-                RD_EX_out <= RD_EX;
-                MemRead_MEM <= MemRead_EX;
-                MemtoReg_MEM <= MemtoReg_EX;
-                MemWrite_MEM <= MemWrite_EX;
-                RegWrite_MEM <= RegWrite_EX;
-                Branch_MEM <= Branch_EX;
-                ALUSrc_MEM <= ALUSrc_EX;
-                ALUop_MEM <= ALUop_EX;
+                ALU_out <= ALU;
+                mux_out <= mux;
+                RD_out <= RD;
+                MemRead_out <= MemRead;
+                MemtoReg_out <= MemtoReg;
+                MemWrite_out <= MemWrite;
+                RegWrite_out <= RegWrite;
+                Branch_out <= Branch;
+                ALUSrc_out <= ALUSrc;
+                ALUop_out <= ALUop;
             end
     end
 endmodule

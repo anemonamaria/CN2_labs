@@ -49,23 +49,23 @@ module pipeline_ID_EX(input clk, reset,
     begin
         if (reset)
         begin
-            MemRead_out <= 1'b0;
-            MemtoReg_out <= 1'b0;
-            MemWrite_out <= 1'b0;
-            RegWrite_out <= 1'b0;
-            Branch_out <= 1'b0;
-            ALUSrc_out <= 1'b0;
-            ALUop_out <= 2'b0; 
-            READ_DATA1_out <= 32'b0;
-            READ_DATA2_out <= 32'b0;
-            IMM_ID_out <= 32'b0;
-            FUNCT3_ID_out <= 3'b0;
-            FUNCT7_ID_out <= 7'b0;
-            OPCODE_ID_out <= 7'b0;
-            RD_ID_out <= 5'b0;
-            RS1_ID_out <= 5'b0;
-            RS2_ID_out <= 5'b0;
-            PC_ID_out <= 32'b0;
+            MemRead_out <= 0;
+            MemtoReg_out <= 0;
+            MemWrite_out <= 0;
+            RegWrite_out <= 0;
+            Branch_out <= 0;
+            ALUSrc_out <= 0;
+            ALUop_out <= 0; 
+            READ_DATA1_out <= 0;
+            READ_DATA2_out <= 0;
+            IMM_ID_out <= 0;
+            FUNCT3_ID_out <= 0;
+            FUNCT7_ID_out <= 0;
+            OPCODE_ID_out <= 0;
+            RD_ID_out <= 0;
+            RS1_ID_out <= 0;
+            RS2_ID_out <= 0;
+            PC_ID_out <= 0;
         end  
         else begin
             MemRead_out <= MemRead;
