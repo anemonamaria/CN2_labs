@@ -13,11 +13,22 @@ Compiling module xil_defaultlib.PC
 Compiling module xil_defaultlib.adder
 Compiling module xil_defaultlib.instruction_memory
 Compiling module xil_defaultlib.IF
+Compiling module xil_defaultlib.IF_ID_reg
 Compiling module xil_defaultlib.registers
 Compiling module xil_defaultlib.imm_gen
 Compiling module xil_defaultlib.ID
-Compiling module xil_defaultlib.IF_ID_reg
-Compiling module xil_defaultlib.RISC_V_IF_ID
+Compiling module xil_defaultlib.pipeline_ID_EX
+Compiling module xil_defaultlib.ALUcontrol
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.mux4_1
+Compiling module xil_defaultlib.EX
+Compiling module xil_defaultlib.pipeline_ex_mem
+Compiling module xil_defaultlib.data_memory
+Compiling module xil_defaultlib.pipeline_MEM_WB
+Compiling module xil_defaultlib.control_path
+Compiling module xil_defaultlib.hazard_detection
+Compiling module xil_defaultlib.forwarding
+Compiling module xil_defaultlib.RISC_V
 Compiling module xil_defaultlib.RISC_V_TB
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot RISC_V_TB_behav
