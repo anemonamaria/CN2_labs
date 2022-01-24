@@ -17,7 +17,6 @@
 // Revision 0.01 - File Created
 // Additional Comments:
 // 
-//////////////////////////////////////////////////////////////////////////////////
 
 module RISC_V(input clk,    // semnalul de ceas global
               input reset,  // semnalul de reset global
@@ -31,13 +30,10 @@ module RISC_V(input clk,    // semnalul de ceas global
               output [1:0] forwardA, forwardB,  // semnalele de forwarding
               output pipeline_stall             // semnal de stall la detectia de hazarduri
              );
-    // inputs
-    wire IF_ID_write;       // semnal de scriere pt registrul IF_ID -> din hazard detection
-    wire PCSrc, PC_write;   // semnale de control pt PC, PCSrc -> mux, PC_Write -> PC module
-    wire RegWrite_WB;        //semnal de activare a scrierii in bancul de registri     
-    wire [4:0] RD_WB;        //registrul rezultat in care se face scrierea
-    
-    // outputs
+    wire IF_ID_write;      
+    wire PC_write;   
+    wire RegWrite_WB;           
+    wire [4:0] RD_WB;        
     wire [31:0] PC_ID;
     wire [31:0] INSTRUCTION_ID;
     wire [31:0] IMM_ID;
@@ -49,13 +45,10 @@ module RISC_V(input clk,    // semnalul de ceas global
     wire [4:0] RD_ID;
     wire [4:0] RS1_ID;
     wire [4:0] RS2_ID;
-    
-    wire [31:0] PC_IF;               //current PC
+    wire [31:0] PC_IF;              
     wire [31:0] INSTRUCTION_IF;
-    // control_path 
     wire MemRead, MemtoReg, MemWrite, RegWrite, Branch, ALUSrc;
     wire [1:0] ALUop;
-    // pipeline ID_EX
     wire MemRead_EX, MemtoReg_EX, MemWrite_EX, RegWrite_EX, Branch_EX, ALUSrc_EX;
     wire [1:0] ALUop_EX;
     wire [31:0] READ_DATA1_EX;
@@ -67,19 +60,15 @@ module RISC_V(input clk,    // semnalul de ceas global
     wire [4:0] RD_EX;
     wire [4:0] RS1_EX;
     wire [4:0] RS2_EX;
-    // forwarding
     wire [4:0] RD_MEM;
-    // EX    
     wire [31:0] ALU_OUT_MEM;
     wire ZERO_EX;
     wire [31:0] REG_DATA2_EX_FINAL;
     wire [31:0] PC_Branch_EX;
-    // pipeline EX_MEM
     wire ZERO_MEM;
     wire [31:0] REG_DATA2_MEM_FINAL; 
     wire MemRead_MEM, MemtoReg_MEM, MemWrite_MEM, RegWrite_MEM, Branch_MEM, ALUSrc_MEM;
     wire [1:0] ALUop_MEM;
-    // pipeline MEM_WB 
     wire [31:0] DATA_MEMORY_WB;
     wire MemRead_WB, MemtoReg_WB, MemWrite_WB, RegWrite_WB, Branch_WB, ALUSrc_WB;
     wire [1:0] ALUop_WB;
@@ -90,19 +79,23 @@ module RISC_V(input clk,    // semnalul de ceas global
     IF_ID_reg IF_ID_REGISTER(clk, reset, IF_ID_write, PC_IF,INSTRUCTION_IF, PC_ID, INSTRUCTION_ID);
        
     ID id(clk, PC_ID, INSTRUCTION_ID, RegWrite_WB, ALU_DATA_WB, RD_WB,
-                            IMM_ID, REG_DATA1_ID, REG_DATA2_ID, FUNCT3_ID, FUNCT7_ID,
-                            OPCODE_ID, RD_ID, RS1_ID, RS2_ID);
- 
-    
+                            IMM_ID, REG_DATA1_ID, REG_DATA2_ID, RegWrite, MemtoReg, MemRead, MemWrite,
+                            ALUop, ALUSrc, Branch);
+
     // pipeline ID_EX
-    pipeline_ID_EX id_ex(clk, reset, MemRead, MemtoReg, MemWrite, RegWrite, Branch, ALUSrc, ALUop,
+    pipeline_ID_EX id_ex(clk, reset, 1, MemRead, MemtoReg, MemWrite, RegWrite, Branch, ALUSrc, ALUop,
                          REG_DATA1_ID, REG_DATA2_ID, IMM_ID, FUNCT3_ID, FUNCT7_ID, OPCODE_ID,
                          RD_ID, RS1_ID, RS2_ID, PC_ID,
                          MemRead_EX, MemtoReg_EX, MemWrite_EX, RegWrite_EX, Branch_EX, ALUSrc_EX,
                          ALUop_EX, READ_DATA1_EX, READ_DATA2_EX, IMM_EX, FUNCT3_EX, FUNCT7_EX,
                          OPCODE_EX, RD_EX, RS1_EX, RS2_EX, PC_EX);
     
-    
+    // hazard detection
+    hazard_detection detection(RD_EX, RS1_ID, RS2_ID, MemRead_EX, PC_write, IF_ID_write, pipeline_stall); 
+  
+     // forwarding
+    forwarding forward(RS1_EX, RS2_EX, RD_MEM, RD_WB, RegWrite_MEM, RegWrite_WB, forwardA, forwardB);
+     
     // EX    
     EX execute(IMM_EX, READ_DATA1_EX, READ_DATA2_EX, PC_EX, FUNCT3_EX, FUNCT7_EX,
                 RD_EX, RS1_EX, RS2_EX, RegWrite_EX, MemtoReg_EX, MemRead_EX, MemWrite_EX,
@@ -128,21 +121,8 @@ module RISC_V(input clk,    // semnalul de ceas global
                 // output
                 DATA_MEMORY_WB, ALU_OUT_WB, RD_WB, 
                 MemRead_WB, MemtoReg_WB, MemWrite_WB, RegWrite_WB, Branch_WB, ALUSrc_WB, ALUop_WB);
-   
-    
+
     // MUX_ALU_DATA  
     mux2_1 mux_wb(ALU_OUT_WB, DATA_MEMORY_WB, MemtoReg_WB, ALU_DATA_WB);  
-    
-    // control_path 
-    control_path control(OPCODE_ID, pipeline_stall, MemRead, MemtoReg, 
-                 MemWrite, RegWrite, Branch, ALUSrc, ALUop);
- 
-    
-    // hazard detection
-    hazard_detection detection(RD_EX, RS1_ID, RS2_ID, MemRead_EX, PC_write, IF_ID_write, pipeline_stall); 
-     
-    // forwarding
-    forwarding forward(RS1_EX, RS2_EX, RD_MEM, RD_WB, RegWrite_MEM, RegWrite_WB, forwardA, forwardB);
-     
    
 endmodule

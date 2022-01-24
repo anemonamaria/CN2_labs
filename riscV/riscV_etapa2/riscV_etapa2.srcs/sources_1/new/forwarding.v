@@ -30,7 +30,6 @@ module forwarding(input [4:0] rs1,          // adresa registrului sursa 1 in eta
                   output reg [1:0] forwardA, forwardB); // semnalele de selectie a multiplexoarelor
                                                        // ce vor alege valoarea ce trebuie bypassata
                                                        
-
     always@(*)
     begin
     forwardA <= 2'b00;

@@ -36,7 +36,7 @@ module data_memory(input clk,
     end
   end
     
-    always@(*)  // asincrona
+    always@(*)
     begin
         if (mem_read)
             read_data <= memory[address[11:2]];
@@ -44,7 +44,7 @@ module data_memory(input clk,
             read_data = read_data;
     end
     
-    always@(posedge clk)  // sincrona
+    always@(posedge clk)
     begin
         if (mem_write)
             memory[address[11:2]] <= write_data;

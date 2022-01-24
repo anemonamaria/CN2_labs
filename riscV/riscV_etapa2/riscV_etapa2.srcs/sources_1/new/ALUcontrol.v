@@ -33,7 +33,6 @@ module ALUcontrol(input [1:0] ALUop,
             12'b100000100000: ALUinput = 4'b0110;   // sub
             12'b101110000000: ALUinput = 4'b0000;   // and
             12'b101100000000: ALUinput = 4'b0001;   // or
-            12'b11110xxxxxxx: ALUinput = 4'b0001;   // ori
             12'b101000000000: ALUinput = 4'b0011;   // xor
             12'b1x1010000000: ALUinput = 4'b0101;   // srl, srli
             12'b1x0010000000: ALUinput = 4'b0100;   // sll, slli

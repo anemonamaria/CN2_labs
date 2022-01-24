@@ -20,16 +20,16 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////PC_MODULE///////////////////////////////////////////////////////////////
-module PC(input clk,res,write, 
-          input [31:0] in, 
+module PC(input clk,res,write,
+          input [31:0] in,
           output reg [31:0] out);
-  always@(posedge clk)
-    begin
-        if (res) out <= 0;
-        else
-        begin
-            if (write)  out <= in;
-         end
-    end
+ 
+  always@(posedge clk) begin
+    if(res)
+      out<=32'b0;
+    else if(write)
+      out<=in;
+  end
+
 endmodule
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////

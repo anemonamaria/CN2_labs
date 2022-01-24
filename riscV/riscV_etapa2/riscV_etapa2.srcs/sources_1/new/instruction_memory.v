@@ -19,20 +19,17 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
 ///////////////////////////////////////INSTRUCTION_MEMORY/////////////////////////////////////////////////////
-module instruction_memory(input [9:0] address, 
-                          output reg[31:0] instruction);
-
+module instruction_memory(input [9:0] address,
+                          output reg [31:0] instruction);
+ 
   reg [31:0] codeMemory [0:1023];
   
-  initial begin $readmemh("code.mem", codeMemory);
-    end
-    
-    always @(address)
-    begin
-        instruction = codeMemory[address];
-    end
+  initial $readmemh("code.mem", codeMemory);
+  
+  always@(address) begin
+    instruction <= codeMemory[address];
+  end
+
 endmodule
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-

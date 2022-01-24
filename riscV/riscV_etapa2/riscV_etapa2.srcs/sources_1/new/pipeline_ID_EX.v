@@ -21,7 +21,7 @@
 
 
 
-module pipeline_ID_EX(input clk, reset,
+module pipeline_ID_EX(input clk, reset, write,
                       input MemRead, MemtoReg, MemWrite, RegWrite, Branch, ALUSrc,
                       input [1:0] ALUop,
                       input [31:0] READ_DATA1, READ_DATA2,
@@ -68,6 +68,8 @@ module pipeline_ID_EX(input clk, reset,
             PC_ID_out <= 0;
         end  
         else begin
+        if(write)
+        begin
             MemRead_out <= MemRead;
             MemtoReg_out <= MemtoReg;
             MemWrite_out <= MemWrite;
@@ -85,6 +87,7 @@ module pipeline_ID_EX(input clk, reset,
             RS1_ID_out <= RS1_ID;
             RS2_ID_out <= RS2_ID;
             PC_ID_out <= PC_ID;
+        end
         end
     end
 endmodule
