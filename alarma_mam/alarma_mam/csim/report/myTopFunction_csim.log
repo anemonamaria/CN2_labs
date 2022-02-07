@@ -2,5 +2,27 @@ INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
    Compiling ../../../test.cpp in debug mode
    Generating csim.exe
+|  E1| --- result
+|  E1| --- correct
+
+|  E2| --- result
+|  E2| --- correct
+
+|  E3| --- result
+|  E3| --- correct
+
+| E01| --- result
+| E01| --- correct
+
+| E10| --- result
+| E10| --- correct
+
+|0000| --- result
+|0000| --- correct
+
+|AAAA| --- result
+|AAAA| --- correct
+
+Succes
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

@@ -9,7 +9,7 @@ add_files alarma_mam/alarma_mam.cpp
 add_files -tb alarma_mam/test.cpp
 add_files -tb alarma_mam/test.h
 open_solution "alarma_mam" -flow_target vivado
-set_part {xc7a12ticsg325-1L}
+set_part {xc7a12ti-csg325-1L}
 create_clock -period 10 -name default
 #source "./alarma_mam/alarma_mam/directives.tcl"
 csim_design
